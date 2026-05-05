@@ -41,25 +41,25 @@ const ContactPage = () => {
   const departments = [
     {
       name: 'General Inquiries',
-      email: 'info@healthcareplus.com',
+      email: 'info@healthcare.com',
       phone: '+1 (555) 123-4567',
       icon: 'fa-info-circle'
     },
     {
       name: 'Appointments',
-      email: 'appointments@healthcareplus.com',
+      email: 'appointments@health.com',
       phone: '+1 (555) 123-4568',
       icon: 'fa-calendar-check'
     },
     {
       name: 'Billing',
-      email: 'billing@healthcareplus.com',
+      email: 'billing@healthcare.com',
       phone: '+1 (555) 123-4569',
       icon: 'fa-credit-card'
     },
     {
       name: 'Emergency',
-      email: 'emergency@healthcareplus.com',
+      email: 'emergency@healthcare.com',
       phone: '+1 (555) 123-4570',
       icon: 'fa-ambulance',
       emergency: true

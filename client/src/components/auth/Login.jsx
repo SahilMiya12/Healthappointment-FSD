@@ -113,12 +113,7 @@ const Login = () => {
             marginBottom: '1rem',
             fontSize: '0.85rem'
           }}>
-            <p style={{ marginBottom: '0.3rem', fontWeight: '500' }}>Demo Credentials:</p>
-            <p style={{ color: '#7F8C8D' }}>
-              <strong>Patient:</strong> patient@healthcare.com / patient123<br/>
-              <strong>Doctor:</strong> sarah.johnson@healthcare.com / doctor123<br/>
-              <strong>Admin:</strong> admin@healthcare.com / admin123
-            </p>
+            
           </div>
 
           <button 
