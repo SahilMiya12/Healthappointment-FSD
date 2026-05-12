@@ -21,14 +21,9 @@ import DoctorDashboard from './components/dashboard/DoctorDashboard'
 import AdminDashboard from './components/dashboard/AdminDashboard'
 import ProfilePage from './pages/ProfilePage'
 import SettingsPage from './pages/SettingsPage'
+import DoctorAvailability from './pages/DoctorAvailability'
 import ProtectedRoute from './components/common/ProtectedRoute'
 import { Toaster } from 'react-hot-toast'
-import DoctorSchedule from './pages/DoctorSchedule'
-import DoctorPatients from './pages/DoctorPatients'
-import AdminManageDoctors from './pages/AdminManageDoctors'
-import AdminManagePatients from './pages/AdminManagePatients'
-import AdminAllAppointments from './pages/AdminAllAppointments'
-
 
 function App() {
   return (
@@ -71,6 +66,11 @@ function App() {
                 <DoctorDashboard />
               </ProtectedRoute>
             } />
+            <Route path="/doctor/availability" element={
+              <ProtectedRoute allowedRoles={['doctor']}>
+                <DoctorAvailability />
+              </ProtectedRoute>
+            } />
             
             {/* Admin Routes */}
             <Route path="/admin/dashboard" element={
@@ -89,7 +89,7 @@ function App() {
               </ProtectedRoute>
             } />
             
-            {/* Common Protected Routes */}
+            {/* Common Routes */}
             <Route path="/profile" element={
               <ProtectedRoute>
                 <ProfilePage />
@@ -105,62 +105,11 @@ function App() {
                 <AppointmentDetail />
               </ProtectedRoute>
             } />
-
-            <Route path="/my-schedule" element={
+            <Route path="/doctor/availability" element={
   <ProtectedRoute allowedRoles={['doctor']}>
-    <DoctorSchedule />
+    <DoctorAvailability />
   </ProtectedRoute>
 } />
-
-<Route path="/my-patients" element={
-  <ProtectedRoute allowedRoles={['doctor']}>
-    <DoctorPatients />
-  </ProtectedRoute>
-} />
-
-// Add these routes for admin
-<Route path="/admin/dashboard" element={
-  <ProtectedRoute allowedRoles={['admin']}>
-    <AdminDashboard />
-  </ProtectedRoute>
-} />
-
-<Route path="/all-appointments" element={
-  <ProtectedRoute allowedRoles={['admin']}>
-    <AdminDashboard />
-  </ProtectedRoute>
-} />
-
-<Route path="/manage-doctors" element={
-  <ProtectedRoute allowedRoles={['admin']}>
-    <AdminDashboard />
-  </ProtectedRoute>
-} />
-
-<Route path="/manage-patients" element={
-  <ProtectedRoute allowedRoles={['admin']}>
-    <AdminDashboard />
-  </ProtectedRoute>
-} />
-<Route path="/manage-doctors" element={
-  <ProtectedRoute allowedRoles={['admin']}>
-    <AdminManageDoctors />
-  </ProtectedRoute>
-} />
-
-<Route path="/manage-patients" element={
-  <ProtectedRoute allowedRoles={['admin']}>
-    <AdminManagePatients />
-  </ProtectedRoute>
-} />
-
-<Route path="/all-appointments" element={
-  <ProtectedRoute allowedRoles={['admin']}>
-    <AdminAllAppointments />
-  </ProtectedRoute>
-} />
-
-
 
           </Routes>
         </main>

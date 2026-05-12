@@ -293,6 +293,25 @@ const Header = () => {
                           <span>My Schedule</span>
                         </Link>
                         <Link
+  to="/doctor/availability"
+  onClick={() => setIsProfileMenuOpen(false)}
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.8rem',
+    padding: '0.75rem 1.25rem',
+    color: '#333',
+    textDecoration: 'none',
+    transition: 'background 0.2s ease'
+  }}
+  onMouseEnter={(e) => e.currentTarget.style.background = '#F8FAFC'}
+  onMouseLeave={(e) => e.currentTarget.style.background = 'white'}
+>
+  <i className="fas fa-calendar-week" style={{ width: '20px', color: '#3498DB' }}></i>
+  <span>Set Availability</span>
+</Link>
+
+                        <Link
                           to="/patients"
                           onClick={() => setIsProfileMenuOpen(false)}
                           style={{

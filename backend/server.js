@@ -28,3 +28,7 @@ app.get('/api/health', (req, res) => {
 
 const PORT = process.env.PORT || 5002;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// Start reminder job for email notifications
+const startReminderJob = require('./utils/reminderJob');
+startReminderJob();

@@ -16,7 +16,7 @@ export const userService = {
   async getDoctorById(id) {
     try {
       const response = await api.get(`/doctors/${id}`)
-      return { doctor: response.data } // Wrap to maintain compatibility
+      return { doctor: response.data }
     } catch (error) {
       console.error('Error fetching doctor:', error)
       throw error
@@ -45,7 +45,7 @@ export const userService = {
     }
   },
 
-  // Get patients (admin only)
+  // Get patients (admin/doctor only)
   async getPatients(params = {}) {
     try {
       const response = await api.get('/patients', { params })
@@ -63,6 +63,39 @@ export const userService = {
       return response.data
     } catch (error) {
       console.error('Error fetching patient:', error)
+      throw error
+    }
+  },
+
+  // Get doctor profile (for logged-in doctor)
+  async getMyDoctorProfile() {
+    try {
+      const response = await api.get('/doctors/my/profile')
+      return response.data
+    } catch (error) {
+      console.error('Error fetching doctor profile:', error)
+      throw error
+    }
+  },
+
+  // Update doctor availability
+  async updateDoctorAvailability(availability) {
+    try {
+      const response = await api.put('/doctors/my/availability', { availability })
+      return response.data
+    } catch (error) {
+      console.error('Error updating availability:', error)
+      throw error
+    }
+  },
+
+  // Get doctor availability
+  async getDoctorAvailability() {
+    try {
+      const response = await api.get('/doctors/my/availability')
+      return response.data
+    } catch (error) {
+      console.error('Error fetching availability:', error)
       throw error
     }
   }

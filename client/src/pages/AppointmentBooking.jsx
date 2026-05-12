@@ -102,6 +102,7 @@ const AppointmentBooking = () => {
     
     await appointmentService.createAppointment(appointmentData)
     toast.success('Appointment booked successfully!')
+    toast.success('Appointment booked! Check your email for confirmation.');
     
     // Redirect to dashboard where user can see all appointments
     navigate('/dashboard')
